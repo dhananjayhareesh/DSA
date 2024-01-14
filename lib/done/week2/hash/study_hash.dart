@@ -23,16 +23,32 @@ class HashTable {
     }
   }
 
+  get(String key) {
+    int index = key.hashCode % size;
+    if (table?[index] == null) {
+      print('$key not found');
+    } else {
+      Node? currentNode = table?[index];
+      while (currentNode != null) {
+        if (currentNode.key == key) {
+          print('the value of $key found at $index: ${currentNode.data}');
+          return;
+        }
+        currentNode = currentNode.next;
+      }
+    }
+  }
+
   getAll(table) {
     for (int i = 0; i < table.length; i++) {
       print('at index $i');
       Node? currentNode = table?[i];
       while (currentNode != null) {
-        print(currentNode.data);
+        print('${currentNode.data}');
         currentNode = currentNode.next;
       }
       if (table[i] == null) {
-        print('No element found');
+        print('no data found');
       }
     }
   }
@@ -40,7 +56,10 @@ class HashTable {
 
 void main() {
   HashTable hash = HashTable(5);
-  hash.add('name', 23);
-  hash.add('jam', 55);
+  hash.add('dhan', 22);
+  hash.add('nahd', 78);
+  hash.add('jkgrum', 56);
+  hash.get('dhan');
+  hash.get('fds');
   hash.getAll(hash.table);
 }

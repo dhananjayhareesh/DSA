@@ -65,5 +65,5 @@ void main() {
   hash.get('prrr');
   hash.get('dfsdsss');
   hash.get('rwea');
-  hash.getAll(hash.table);
+  hash.get('dhan');
 }
