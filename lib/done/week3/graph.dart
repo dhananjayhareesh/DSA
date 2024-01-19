@@ -79,7 +79,8 @@ main() {
   graph.insert(10, 18);
   graph.insert(17, 20);
   graph.insert(17, 21);
+  graph.showEdges(10);
   // graph.bfs(10);
-  graph.dfs(10);
+  // graph.dfs(10);
   // graph.display();
 }

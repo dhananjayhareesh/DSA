@@ -17,7 +17,7 @@ class BST {
       Node? temp = root;
       while (temp != null) {
         if (temp.data == data) {
-          print("duplicate elements can't add be add");
+          print("duplicate elements can't add be added");
           return;
         } else {
           if (data > temp.data) {
@@ -105,21 +105,28 @@ class BST {
   }
 
   //bst or not
-  bstOrNot(Node? root) {
+  bool bstOrNot(Node? root) {
     int k = 0;
-    inOrder(Node? root) {
-      if (root != null) {
-        inOrder(root.left);
-        if (k > root.data) {
-          print('its not bst');
+
+    bool inOrder(Node? node) {
+      if (node != null) {
+        inOrder(node.left);
+        if (k > node.data) {
+          print('It is not a BST');
           return false;
         }
-        inOrder(root.right);
+        k = node.data;
+        inOrder(node.right);
       }
+      return true;
     }
 
-    print('its bst');
-    return true;
+    if (inOrder(root)) {
+      print('It is a BST');
+      return true;
+    } else {
+      return false;
+    }
   }
 
   //delete bst

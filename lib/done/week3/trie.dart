@@ -66,11 +66,12 @@ void main() {
   Trie trie = Trie();
   trie.insert("apple");
   trie.insert('cat');
-  // print(trie.search("apple"));
-  // print(trie.search("app"));
+  trie.insert('app');
+  print(trie.search("apple"));
+  print(trie.search("app"));
   print(trie.startsWith("app"));
   // trie.insert("app");
-  // print(trie.search("app"));
-  // print(trie.prefixSearch("ca"));
-  // print(trie.prefixSearch("ap"));
+  print(trie.search("app"));
+  print(trie.prefixSearch("ca"));
+  print(trie.prefixSearch("ap"));
 }
